@@ -851,9 +851,9 @@ section #title .credits.right {
 }
 .center
 {
-  position:fixed;
-top:30px;
+
 width:700px;
 margin-left: auto ;
   margin-right: auto ;
+  margain-top:100px;
 }
