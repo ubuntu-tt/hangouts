@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="ubs">
     <head>
         <meta charset="utf-8">
         <title>Ubuntu TT Hangout</title>
         <style type="text/css">
             body {
-                padding-top: 60px;
+                
                 padding-bottom: 40px;
             }
             .sidebar-nav {
@@ -21,7 +21,7 @@
             }
         </style>
         <link rel="stylesheet" href="http://bootswatch.com/united/bootstrap.css">
-        <link rel="stylesheet" href="/hangouts/assets/css/site.css">
+        <link rel="stylesheet" href="./assets/css/site.css">
     </head>
     <body>
         <div class="navbar ">
@@ -35,40 +35,50 @@
                 <div class="nav-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">G+</a></li>
-                        <li><a href="#">IRC</a></li>
-                        <li><a href="#">Wiki</a></li>
-                        <li><a href="#">LaunchPad</a></li>
-                        <li><a href="#about.html">About</a></li>
-                        <li><a href="#contact.html">Contact</a></li>
+                        <li><a href="http://webchat.freenode.net/?channels=ubuntu-tt" target='_blank'>IRC</a></li>
+                        <li><a href="https://wiki.ubuntu.com/TrinidadandTobagoTeam" target='_blank'>Wiki</a></li>
+                        <li><a href="https://launchpad.net/~ubuntu-tt" target='_blank'>LaunchPad</a></li>
+                        <li><a href='https://lists.ubuntu.com/mailman/listinfo/Ubuntu-tt' target='_blank'>Mailing List</a></li>
+                        <li><a href="http://www.facebook.com/groups/285982144750674/" target='_blank'>Facebook</a></li>
+                        <li><a href="https://plus.google.com/communities/100261509429161036947/stream/eb83d32c-da56-4f54-aa0e-82a4e4eecae5" target='_blank'>G+</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
         </div>
-        <div class="container">
+        <div class="container" data-ng-controller="ubs.HangoutController" data-ng-init="hangout='http://www.youtube.com/embed/hVYOBaOZfBA'">
             <div class="row">
-                <div class="span12"><h1 style="text-align:center; font-weight: 900; color:#dd4814">Ubuntu Trinidad &amp; Tobago Team</h1></div>
-                <br/>
-                <div class="span12">
-                    <div class="well" style="background:#fff; border-color: #dd4814;">
-                        <iframe class="bigframe span12" style="z-index:-1" src="http://www.youtube.com/embed/hVYOBaOZfBA" frameborder="0" allowfullscreen></iframe>
+                <div class="col-lg-12">
+                    <p><h1 style="text-align:center; font-weight: 900; color:#dd4814">Ubuntu Trinidad &amp; Tobago Team</h1></p>
+                    <p><h1 style="text-align:center; font-weight: 900; color:#dd4814">Hangout Page</h1></p>
+                </div>
+                <div class="col-lg-3">                    
+                        <a class="btn btn-large btn-success" data-ng-click="setHangout()">Change hangout</a>
+                </div>
+            </div>
+            <br/>
+            <div class="row">                
+                <div class="">
+                    <div class="col-lg-12">
+                        <iframe  class="bigframe" data-ng-src="{{hangout}}" align='middle' frameborder="0" allowfullscreen seamless></iframe>
                     </div>
                 </div>
             </div>
-            <br/>            
+            <br/>     
             <div class="row">                
-                <div class="span12">
-                    <iframe class="bigframe" src="http://webchat.freenode.net?randomnick=1&channels=ubuntu-tt&uio=d4"></iframe>
+                <div class="col-lg-12">
+                    <iframe class="bigframe" src="http://webchat.freenode.net?randomnick=1&channels=ubuntu-tt&uio=d4" frameborder="0" seamless></iframe>
                 </div>
                 <br/>
                 <br/>
             </div>                        
             <footer>
                 <p>&copy; Ubuntu Trinidad &amp; Tobago Team 2013</p>
+                <p>Scraped up by <a href='http://lasana.quenk.com'>Lasana Murray</a></p>
             </footer>
         </div>
         <!-- /container -->
         <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+        <script src="./assets/js/site.js"></script>
     </body>
 </html>

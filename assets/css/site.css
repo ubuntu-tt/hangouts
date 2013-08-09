@@ -2,10 +2,19 @@ body {
     background: url(../img/bg.png);
 }
 .bigframe {
-    display:inline-block;text-align: center;width: 100%; height:400px;
+    display:inline-block;
+    text-align: center;
+    width:100%;
+    height:500px;
 }
 .easyframe {
     width: 50%;
     display:block;
     height:400px;
+}
+
+.full {
+    width: auto;
+    height: 400px;
+    background: #555;
 }
