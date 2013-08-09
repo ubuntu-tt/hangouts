@@ -851,7 +851,7 @@ section #title .credits.right {
 }
 .center
 {
-float:left;
+width:700px;
 margin-left: auto ;
   margin-right: auto ;
 }
